@@ -1,0 +1,14 @@
+{
+
+
+
+
+    "githubPullRequests.hosts": [
+        {
+            "host": "https://github.com",
+            //"username": "andimalaj",
+            "token": "7ee3eddb8112acbcd9e6d335a238f8771da7587d"
+        }
+    ]
+
+}
