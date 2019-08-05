@@ -16,6 +16,9 @@ class UpdateCallv3 extends Migration
         Schema::table('calls', function (Blueprint $table) {
             //
             $table->string('call_description')->nullable()->change();
+            $table->string('startdate')->nullable()->change();
+            $table->string('enddate')->nullable()->change();
+            $table->string('status')->nullable()->change();
         });
     }
 

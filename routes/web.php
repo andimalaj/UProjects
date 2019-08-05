@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home')->name('index');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/aplikimi', function () {
-    return view('aplikimi');
-});
+Route::get('calls', 'CallsController@index')->name('calls.index');
+Route::get('calls/create', 'CallsController@create')->name('calls.create');
+Route::post('calls', 'CallsController@store')->name('calls.store');
+Route::get('calls/{call}', 'CallsController@show')->name('calls.show')->middleware('can:view,call');
+Route::get('calls/{call}/edit', 'CallsController@edit')->name('calls.edit');
+Route::patch('calls/{call}', 'CallsController@update')->name('calls.update');
