@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">Applications </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Organisations</a>
+                    <a class="nav-link" href="/organisations">Organisations</a>
                 </li>
             </ul>
 
