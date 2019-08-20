@@ -15,10 +15,10 @@ class CreateCallapplicationsTable extends Migration
     {
         Schema::create('callapplications', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('call_id');
-            $table->unsignedInteger('organisation_id');
-            $table->boolean('application_status');
-            $table->string('approval_status');
+            $table->bigInteger('call_id');
+            $table->unsignedInteger('organisation_id')->nullable();
+            $table->boolean('application_status')->nullable();
+            $table->string('approval_status')->nullable();
             $table->timestamps();
         });
     }

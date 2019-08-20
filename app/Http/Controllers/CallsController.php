@@ -18,6 +18,12 @@ class CallsController extends Controller
         return view('calls.index', compact('calls'));
     }
 
+    public function aplikimi()
+    {
+        $calls = Call::all();
+        return view('calls.aplikimi', compact('calls'));
+    }
+
     public function create()
     {
 

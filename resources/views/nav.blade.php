@@ -19,7 +19,7 @@
                     <a class="nav-link" href="/calls">Call List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Applications </a>
+                    <a class="nav-link" href="/aplikimi">Applications </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/organisations">Organisations</a>
