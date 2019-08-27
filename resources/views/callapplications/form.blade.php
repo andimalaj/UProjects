@@ -45,8 +45,8 @@
 </div>
 
 <div class="form-group">
-        <label for="organisationpic">Partnere te regjistruar(me PIC):</label>
-        <select multiple class="form-control" name="organisationpic" >
+        <label for="organisationpic_id[]">Partnere te regjistruar(me PIC):</label>
+        <select multiple class="form-control" name="organisationpic_id[]" >
             @foreach($organisations as $organisation)
             <option value="{{ $organisation->id }}">{{ $organisation->pic }}</option>
             @endforeach

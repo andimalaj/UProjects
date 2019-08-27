@@ -7,6 +7,7 @@ use App\Callapplication;
 use App\Call;
 use App\Organisation;
 use App\Applicationcomponent;
+use App\Applicationbeneficary;
 
 class CallapplicationsController extends Controller
 {
@@ -37,10 +38,11 @@ class CallapplicationsController extends Controller
 
         $callapplication = new Callapplication();
         $applicationcomponent = new Applicationcomponent();
+        $applicationbeneficaries = new Applicationbeneficary();
         //$callapplication -> call = $call;
         $organisations =  Organisation::all();
        // $organisations = Organisation::pluck('organisation_name', 'id');
-        return view('callapplications.create', compact('callapplication','call','organisations','applicationcomponent'));
+        return view('callapplications.create', compact('callapplication','call','organisations','applicationcomponent','applicationbeneficaries'));
     }
 
     public function store(Call $call)
@@ -49,6 +51,7 @@ class CallapplicationsController extends Controller
         //$call = Call::create($call->validateRequest());
         $callapplication = new Callapplication();
         $applicationcomponent = new Applicationcomponent();
+
         $callapplication -> call_id = request('call_id');
         $callapplication -> organisation_id = request('organisation');
         $callapplication -> save();
@@ -71,6 +74,17 @@ class CallapplicationsController extends Controller
         $applicationcomponent -> activities = request('activities');
         $applicationcomponent -> reliability = request('reliability');
         $applicationcomponent -> save();
+
+        //$applicationbeneficariesinput = request('organisationpic_id');
+
+        for ($i = 0; $i < count(request('organisationpic_id')); $i++){
+            $applicationbeneficaries = new Applicationbeneficary();
+            $applicationbeneficaries -> callapplication_id = $callapplication->id;
+            $applicationbeneficaries -> organisation_id = request('organisationpic_id')[$i];
+            $applicationbeneficaries -> save();
+        }
+
+
         return redirect('aplikimi');
     }
 

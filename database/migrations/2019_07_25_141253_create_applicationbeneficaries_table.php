@@ -17,8 +17,8 @@ class CreateApplicationbeneficariesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('callapplication_id');
             $table->unsignedInteger('organisation_id');
-            $table->boolean('coordinator');
-            $table->boolean('status');
+            $table->boolean('coordinator')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }
